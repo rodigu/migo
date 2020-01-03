@@ -1,5 +1,7 @@
 
 All_Bullets bullet_controller;
+All_Enemies enemy_controller;
+
 PFont font_01;
 PFont font_02;
 
@@ -25,7 +27,7 @@ void setup(){
 
 void draw(){
   background(250);
-  player_one.update();
   bullet_controller.update();
+  player_one.update();
   println(bullet_controller.blue_bullets.size());
 }
