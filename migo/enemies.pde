@@ -1,28 +1,24 @@
 class Enemy{
-  float enemy_size;
+  PImage enemy_image;
   PVector velocity;
   PVector position;
   color enemy_color;
   int life;
   String type;
-  Enemy(PVector position_in, color color_in, String type_in){
+  Enemy(PVector position_in, String type_in){
     position = position_in;
-    enemy_color = color_in;
     type = type_in;
-    if(type == "type_0"){
+    String temp_image = "enemy_" + type_in + ".png";
+    if(type == "0"){
       life = 2;
-      enemy_size = base_size;
-      enemy_color = color(200, 0, 0);
+      enemy_image = loadImage(temp_image);
       velocity = new PVector(0, 5);
     }
   }
 
   void update(){
-    if(type == "type_0"){
-      strokeWeight(stroke_weight);
-      stroke(0);
-      fill(enemy_color);
-      rect(position.x - enemy_size/2, position.y - enemy_size/2, enemy_size, enemy_size, 10);
+    if(type == "0"){
+      image(enemy_image, position.x - enemy_image.width/2, position.y - enemy_image.width/2);
       if(frameCount%60 == 0) shoot();
     }
   }

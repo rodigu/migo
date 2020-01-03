@@ -34,18 +34,16 @@ class Bullet{
   PVector velocity;
   PVector position;
   float damage;
-  PImage bullet_image;
-  Bullet(float d, PVector position_in, PVector velocity_in, PImage image_in){
+  String bullet_type;
+  Bullet(float d, PVector position_in, PVector velocity_in, String bullet_type){
     damage = d;
     position = position_in;
     velocity = velocity_in;
     bullet_image = image_in;
-    bullet_image.resize(size_in, size_in)
+    bullet_image.resize(int(base_size), int(base_size));
   }
   void display(){
     position.add(velocity);
-    fill(bullet_color);
-    strokeWeight(stroke_weight/3);
     image(bullet_image, position.x - bullet_image.width/2,
           position.y - bullet_image.height/2);
   }

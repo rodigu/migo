@@ -21,7 +21,7 @@ void setup(){
   textFont(font_01, base_size);
   //fullScreen();
   size(500, 800);
-  player_one = new Player(new PVector(width/2, height/2), color(50, 50, 250));
+  player_one = new Player(new PVector(width/2, height/2), loadImage("player.png"));
   bullet_controller = new All_Bullets();
 }
 
