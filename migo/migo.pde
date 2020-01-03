@@ -1,6 +1,6 @@
 
 All_Bullets bullet_controller;
-All_Enemies enemy_controller;
+ArrayList<Enemy> level_enemies = new ArrayList<Enemy>();
 
 PFont font_01;
 PFont font_02;
@@ -21,13 +21,11 @@ void setup(){
   textFont(font_01, base_size);
   //fullScreen();
   size(500, 800);
-  player_one = new Player(width/2, height/2, color(50, 50, 250));
+  player_one = new Player(new PVector(width/2, height/2), color(50, 50, 250));
   bullet_controller = new All_Bullets();
 }
 
 void draw(){
   background(250);
-  bullet_controller.update();
-  player_one.update();
-  println(bullet_controller.blue_bullets.size());
+  level01();
 }

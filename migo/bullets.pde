@@ -9,30 +9,44 @@ class All_Bullets{
     for (int i = 0; i < blue_bullets.size(); i++){
       Bullet b = blue_bullets.get(i);
       b.display();
-      if (b.y <= 0){
+      if (b.position.y <= 0){
         blue_bullets.remove(i);
+      }
+    }
+    for (int i = 0; i < red_bullets.size(); i++){
+      Bullet b = red_bullets.get(i);
+      b.display();
+      if (b.position.y <= 0 || b.position.y >= height ||
+        b.position.x <= 0 || b.position.x >= width){
+        red_bullets.remove(i);
       }
     }
 
   }
 
+  void collision_check(){
+    
+  }
+
 }
 
 class Bullet{
-  float damage, x, y, speed, bullet_size;
+  PVector velocity;
+  PVector position;
+  float damage, bullet_size;
   color bullet_color;
-  Bullet(float d, float xt, float yt, float speed_in, float size_in, color color_in){
+  Bullet(float d, PVector position_in, PVector velocity_in,
+         float size_in, color color_in){
     damage = d;
-    x = xt;
-    y = yt;
-    speed = speed_in;
-    bullet_size = size_in;
+    position = position_in;
+    velocity = velocity_in;
     bullet_color = color_in;
+    bullet_size = size_in;
   }
   void display(){
-    y += speed;
+    position.add(velocity);
     fill(bullet_color);
     strokeWeight(stroke_weight/3);
-    rect(x - bullet_size/2, y, bullet_size, 2*bullet_size);
+    rect(position.x - bullet_size/2, position.y, bullet_size, 2*bullet_size);
   }
 }
