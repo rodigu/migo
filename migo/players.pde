@@ -11,24 +11,7 @@ class Player{
 
   void update(){
     player_control();
-    //strokeWeight(stroke_weight);
-    noStroke();
-    fill(player_color);
-    beginShape();
-      vertex(position.x, position.y - player_size*base_size);
-      //vertex(x - player_size*base_size/4, y);
-      //vertex(x - player_size*base_size/2, y - player_size*base_size/4);
-      vertex(position.x - player_size*base_size/2, position.y + player_size*base_size/2);
-      vertex(position.x + player_size*base_size/2, position.y + player_size*base_size/2);
-      //vertex(x + player_size*base_size/2, y - player_size*base_size/4);
-      //vertex(x + player_size*base_size/4, y);
-      //triangle  (x, y - player_size*base_size,
-      //           x - player_size*base_size/2, y + player_size*base_size/2,
-      //           x + player_size*base_size/2, y + player_size*base_size/2);
-    endShape(CLOSE);
-    strokeWeight(stroke_weight/2);
-    stroke(0);
-    circle(position.x, position.y, player_size*20);
+    
   }
 
   void player_control(){
@@ -37,8 +20,8 @@ class Player{
   }
 
   void shoot(){
-    bullet_controller.blue_bullets.add(new Bullet(1,
+    bullet_controller.blue_bullets.add( new Bullet(1,
       new PVector(position.x, position.y - player_size*base_size/2),
-      new PVector(0, -40), player_size*5, player_color));
+      new PVector(0, -40), loadImage("player.png")) );
   }
 }

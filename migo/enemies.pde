@@ -28,9 +28,9 @@ class Enemy{
   }
 
   void shoot(){
-    bullet_controller.red_bullets.add(new Bullet(1,
+    bullet_controller.red_bullets.add( new Bullet(1,
       new PVector(position.x, position.y),
-      new PVector(0, 10), enemy_size/10, enemy_color));
+      new PVector(0, 10), loadImage("enemy_0.png")) );
   }
 
 }
