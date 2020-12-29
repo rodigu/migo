@@ -6,6 +6,9 @@ function setup(){
   smooth(0);
   canv = createCanvas(640, 640);
   TILE = 80;
+  textSize(TILE);
+  textFont(loadFont('assets/game_over.ttf'));
+  textAlign(CENTER, CENTER);
   map = [];
   for (let i = 0; i < 8; i++){
     map.push([]);
@@ -15,11 +18,6 @@ function setup(){
   canv.position((windowWidth - width)/2, (windowHeight - height)/2);
 }
 
-function keyPressed(){
-  if (key == 'a'){
-
-  }
-}
 function showMap(){
   let ans = '[\n';
   for (let i = 0; i < 8; i++){
@@ -50,5 +48,7 @@ function draw(){
       if (map[i][j] == 3) fill(0, 200, 0);
       if (map[i][j] == 4) fill(0, 0, 200);
       rect(i*TILE, j*TILE, TILE, TILE);
+      fill(0);
+      text(map[i][j], i*TILE + TILE/2, j*TILE + TILE/2);
     }
 }
