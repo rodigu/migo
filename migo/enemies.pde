@@ -12,6 +12,7 @@ class Enemy{
     if(type == "0"){
       life = 2;
       enemy_image = loadImage(temp_image);
+      enemy_image.resize(int(base_size), int(base_size));
       velocity = new PVector(0, 5);
     }
   }
@@ -26,7 +27,7 @@ class Enemy{
   void shoot(){
     bullet_controller.red_bullets.add( new Bullet(1,
       new PVector(position.x, position.y),
-      new PVector(0, 10), loadImage("enemy_0.png")) );
+      new PVector(0, 10), enemy_bullet) );
   }
 
 }

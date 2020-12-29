@@ -35,7 +35,8 @@ class Bullet{
   PVector position;
   float damage;
   String bullet_type;
-  Bullet(float d, PVector position_in, PVector velocity_in, String bullet_type){
+  PImage bullet_image;
+  Bullet(float d, PVector position_in, PVector velocity_in, PImage image_in){
     damage = d;
     position = position_in;
     velocity = velocity_in;

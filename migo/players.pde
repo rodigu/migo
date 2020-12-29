@@ -23,6 +23,6 @@ class Player{
   void shoot(){
     bullet_controller.blue_bullets.add( new Bullet(1,
       new PVector(position.x, position.y - player_image.height/2),
-      new PVector(0, -40), loadImage("player_bullet.png")) );
+      new PVector(0, -40), player_bullet) );
   }
 }
