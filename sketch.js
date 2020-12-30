@@ -23,8 +23,8 @@ function showMap(){
   for (let i = 0; i < 8; i++){
     ans += '[';
     for (let j = 0; j < 8; j++){
-      ans += str(map[i][j]);
-      if (j < 7) ans += ',';
+      ans += str(map[j][i]);
+      if (j < 7) ans += ', ';
     }
     ans += ']';
     if (i < 7) ans += ',';
