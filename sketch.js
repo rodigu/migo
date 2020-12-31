@@ -41,7 +41,7 @@ function draw(){
   stroke(150);
   if (mouseIsPressed)
     if (mouseX > 0 && mouseX < width && mouseY > 0 && mouseY < height)
-      map[int(mouseX/TILE)][int(mouseY/TILE)] = input.value();
+      map[int(mouseX/TILE)][int(mouseY/TILE)] = tiletype.value();
   for (let i = 0; i < 8; i++)
     for (let j = 0; j < 8; j++){
       fill(map[i][j]*15.5)
