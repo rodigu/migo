@@ -1,9 +1,11 @@
 var canv;
 var map;
 var TILE;
+var tiletype;
 
 function setup(){
   smooth(0);
+  tiletype = createInput(0);
   canv = createCanvas(640, 640);
   TILE = 80;
   textSize(TILE);
@@ -39,7 +41,7 @@ function draw(){
   stroke(150);
   if (mouseIsPressed)
     if (mouseX > 0 && mouseX < width && mouseY > 0 && mouseY < height)
-      map[int(mouseX/TILE)][int(mouseY/TILE)] = int(key);
+      map[int(mouseX/TILE)][int(mouseY/TILE)] = input.value();
   for (let i = 0; i < 8; i++)
     for (let j = 0; j < 8; j++){
       fill(map[i][j]*15.5)
