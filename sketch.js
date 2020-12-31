@@ -42,11 +42,7 @@ function draw(){
       map[int(mouseX/TILE)][int(mouseY/TILE)] = int(key);
   for (let i = 0; i < 8; i++)
     for (let j = 0; j < 8; j++){
-      if (map[i][j] == 0) fill(20);
-      if (map[i][j] == 1) fill(200);
-      if (map[i][j] == 2) fill(200, 0, 0);
-      if (map[i][j] == 3) fill(0, 200, 0);
-      if (map[i][j] == 4) fill(0, 0, 200);
+      fill(map[i][j]*15.5)
       rect(i*TILE, j*TILE, TILE, TILE);
       fill(0);
       text(map[i][j], i*TILE + TILE/2, j*TILE + TILE/2);
