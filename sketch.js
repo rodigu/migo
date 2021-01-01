@@ -8,20 +8,20 @@ var mousi;
 var number_of_assets;
 
 function setup(){
-  number_of_assets = 15;
+  number_of_assets = 19;
   smooth(0);
   tiles = [];
   assets = [];
   current = 0;
+  TILE = 80;
   for (var i = 0; i < number_of_assets; i++){
-    tiles.push(createImg('assets/' + str(i) + '.png', ''));
+    tiles.push(createImg('assets/' + str(i) + '.png', '').size(40, 40));
     tiles[i].position(20 + 60*i, 20);
     tiles[i].mouseClicked(T);
     tiles[i].k = i;
     assets.push(loadImage('assets/' + str(i) + '.png'));
   }
   canv = createCanvas(640, 640);
-  TILE = 80;
   textSize(TILE/2);
   textFont(loadFont('assets/game_over.ttf'));
   textAlign(CENTER, CENTER);
@@ -54,7 +54,7 @@ function showMap(){
 function T(){
   console.log(this.k);
   current = this.k;
-  mousi = createImg('assets/' + str(this.k) + '.png', '');
+  mousi = createImg('assets/' + str(this.k) + '.png', '').size(TILE, TILE);
   mousi.position(64, windowHeight/2);
 }
 
