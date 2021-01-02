@@ -29,7 +29,7 @@ function setup(){
   for (let i = 0; i < 8; i++){
     map.push([]);
     for (let j = 0; j < 8; j++)
-      map[i].push(0);
+      map[i].push(1);
   }
   canv.position((windowWidth - width)/2, (windowHeight - height)/2);
 }
