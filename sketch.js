@@ -59,7 +59,7 @@ function T(){
 }
 
 function draw(){
-  if (frameCount < 10)
+  if (frameCount < 50)
     for (var i = 0; i < assets.length; i++)
       assets[i].resizeNN(TILE, 0);
   stroke(150);
