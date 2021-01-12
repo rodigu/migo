@@ -8,15 +8,21 @@ var mousi;
 var number_of_assets;
 
 function setup(){
-  number_of_assets = 19;
+  number_of_assets = 25;
   smooth(0);
   tiles = [];
   assets = [];
   current = 0;
   TILE = 80;
-  for (var i = 0; i < number_of_assets; i++){
+  let j = 0, k = 0;
+  for (let i = 0; i < number_of_assets; i++){
     tiles.push(createImg('assets/' + str(i) + '.png', '').size(40, 40));
-    tiles[i].position(20 + 60*i, 20);
+    tiles[i].position(45*k, 45*j);
+    k++;
+    if (30*k > windowWidth){
+      k = 0;
+      j++;
+    }
     tiles[i].mouseClicked(T);
     tiles[i].k = i;
     assets.push(loadImage('assets/' + str(i) + '.png'));
@@ -31,7 +37,15 @@ function setup(){
     for (let j = 0; j < 8; j++)
       map[i].push(1);
   }
-  canv.position((windowWidth - width)/2, (windowHeight - height)/2);
+  canv.position((windowWidth - width)/2, 40+(windowHeight - height)/2);
+}
+
+function setMap(new_map_){
+  for (let i = 0; i < map.length; i++){
+    for (let j = 0; j < map[i].length; j++){
+      map[i][j] = new_map_[j][i];
+    }
+  }
 }
 
 function showMap(){
