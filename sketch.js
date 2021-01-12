@@ -5,10 +5,9 @@ var tiles;
 var current;
 var assets;
 var mousi;
-var number_of_assets;
+const number_of_assets = 28;
 
 function setup(){
-  number_of_assets = 25;
   smooth(0);
   tiles = [];
   assets = [];
@@ -19,7 +18,7 @@ function setup(){
     tiles.push(createImg('assets/' + str(i) + '.png', '').size(40, 40));
     tiles[i].position(45*k, 45*j);
     k++;
-    if (30*k > windowWidth){
+    if (45*k > windowWidth){
       k = 0;
       j++;
     }
